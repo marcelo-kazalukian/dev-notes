@@ -1,7 +1,7 @@
 # Using same blade form for create and edit
 
 view/entries/createOrEdit.blade.php
-```php
+```blade
 @extends('layouts.app')
 
 @section('content')
