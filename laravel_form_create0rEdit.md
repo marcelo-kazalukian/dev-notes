@@ -6,19 +6,33 @@ view/entries/createOrEdit.blade.php
 
 @section('content')
     <div>
-        <h1>Create a new entry</h1>
         @if (isset($entry))
+            <h1>Edit entry</h1>
             <form method="POST" action="{{ route('entries.update', $entry->id) }}">
-            @method('PUT')
+                @method('PUT')
         @else
+            <h1>Create a new entry</h1>
             <form method="POST" action="{{ route('entries.store') }}">
         @endif
-            @csrf
-            <div>                
-                <textarea required name="content" rows="10">{{old('content', $entry->content)}}</textarea>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
+                @csrf
+                <div>                
+                    <textarea required name="content" rows="10">{{old('content', $entry->content ?? '')}}</textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
     </div>
 @endsection
+```
+
+EntryController.php
+```php
+public function create()
+{
+    return view('entries.createOrEdit');
+}
+
+public function edit(Entry $entry)
+{
+    return view('entries.createOrEdit', compact('entry'));
+}
 ```
