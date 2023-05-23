@@ -33,6 +33,7 @@ npn run start
 ```
 
 ## Laravel Local environment
+.env file
 ```
 ...
 APP_URL=http://localhost:8000
