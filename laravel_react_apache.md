@@ -38,6 +38,7 @@ npn run start
 APP_URL=http://localhost:8000
 SANCTUM_STATEFUL_DOMAINS=localhost:3000
 SESSION_DOMAIN=.localhost
+...
 ```
 
 Start the the laravel server
