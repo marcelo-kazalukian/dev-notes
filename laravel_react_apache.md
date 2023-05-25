@@ -88,3 +88,35 @@ SSLCertificateKeyFile /etc/letsencrypt/live/api.tapstar.com.au-0001/privkey.pem
 </VirtualHost>
 </IfModule>
 ```
+
+## React production environment
+
+/etc/apache2/sites-enabled/frontend-le-ssl.conf
+```
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+        ServerAdmin marcelok1985@gmail.com
+        ServerName tapstar.com.au
+        ServerAlias www.tapstar.com.au
+        DocumentRoot /var/www/frontend/build
+
+        <Directory /var/www/frontend/build/>
+            Options +FollowSymLinks
+            AllowOverride All
+            Require all granted
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        <IfModule mod_dir.c>
+            DirectoryIndex index.php index.pl index.cgi index.html index.xhtml index.htm
+        </IfModule>
+
+
+Include /etc/letsencrypt/options-ssl-apache.conf
+SSLCertificateFile /etc/letsencrypt/live/tapstar.com.au-0001/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/tapstar.com.au-0001/privkey.pem
+</VirtualHost>
+</IfModule>
+```
