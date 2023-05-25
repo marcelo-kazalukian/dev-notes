@@ -91,6 +91,12 @@ SSLCertificateKeyFile /etc/letsencrypt/live/api.tapstar.com.au-0001/privkey.pem
 
 ## React production environment
 
+The app is installed under /var/www/frontend/build
+
+I run the npm run build command in my local machine and I upload the build folder
+
+/var/www/frontend/build/
+
 /etc/apache2/sites-enabled/frontend-le-ssl.conf
 ```
 <IfModule mod_ssl.c>
