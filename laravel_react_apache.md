@@ -34,9 +34,7 @@ npn run start
 
 package.json file
 ```json
-...
 "homepage": "https://tapstar.com.au",
-...
 ```
 
 ## Laravel Local environment
