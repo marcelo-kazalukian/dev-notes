@@ -16,7 +16,7 @@ axios.defaults.withCredentials = true;
 
 The REACT_APP_API variable is defined in react/.env
 ```
-REACT_APP_API="https://api.tapstar.com.au"
+REACT_APP_API="https://api.domain.com.au"
 ```
 
 Create the file react/public/.htaccess
@@ -34,7 +34,7 @@ npn run start
 
 package.json file should include this 
 ```json
-"homepage": "https://tapstar.com.au",
+"homepage": "https://domain.com.au",
 ```
 
 ## Laravel Local environment
