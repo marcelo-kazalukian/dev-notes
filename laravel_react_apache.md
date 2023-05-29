@@ -69,7 +69,7 @@ SESSION_DOMAIN=.domain.com.au
 ```
 <IfModule mod_ssl.c>
 <VirtualHost *:443>
-        ServerAdmin marcelok1985@gmail.com
+        ServerAdmin my_email@gmail.com
         ServerName api.domain.com.au
         DocumentRoot /var/www/api/public
 
@@ -106,7 +106,7 @@ I run the npm run build command in my local machine and I upload the build folde
 ```
 <IfModule mod_ssl.c>
 <VirtualHost *:443>
-        ServerAdmin marcelok1985@gmail.com
+        ServerAdmin my_email@gmail.com
         ServerName domain.com.au
         ServerAlias www.domain.com.au
         DocumentRoot /var/www/frontend/build
