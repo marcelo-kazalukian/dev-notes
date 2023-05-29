@@ -32,7 +32,7 @@ Start the react server
 npn run start
 ```
 
-package.json file
+package.json file should include this 
 ```json
 "homepage": "https://tapstar.com.au",
 ```
@@ -59,9 +59,9 @@ The app is installed under /var/www/api
 .env file
 ```
 ...
-APP_URL=http://localhost
-SANCTUM_STATEFUL_DOMAINS=tapstar.com.au
-SESSION_DOMAIN=.tapstar.com.au
+APP_URL=https://api.domain.com
+SANCTUM_STATEFUL_DOMAINS=domain.com.au
+SESSION_DOMAIN=.domain.com.au
 ...
 ```
 
@@ -70,7 +70,7 @@ SESSION_DOMAIN=.tapstar.com.au
 <IfModule mod_ssl.c>
 <VirtualHost *:443>
         ServerAdmin marcelok1985@gmail.com
-        ServerName api.tapstar.com.au
+        ServerName api.domain.com.au
         DocumentRoot /var/www/api/public
 
         <Directory /var/www/api/public/>
@@ -88,8 +88,8 @@ SESSION_DOMAIN=.tapstar.com.au
 
 
 Include /etc/letsencrypt/options-ssl-apache.conf
-SSLCertificateFile /etc/letsencrypt/live/api.tapstar.com.au-0001/fullchain.pem
-SSLCertificateKeyFile /etc/letsencrypt/live/api.tapstar.com.au-0001/privkey.pem
+SSLCertificateFile /etc/letsencrypt/live/api.domain.com.au-0001/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/api.domain.com.au-0001/privkey.pem
 </VirtualHost>
 </IfModule>
 ```
@@ -107,8 +107,8 @@ I run the npm run build command in my local machine and I upload the build folde
 <IfModule mod_ssl.c>
 <VirtualHost *:443>
         ServerAdmin marcelok1985@gmail.com
-        ServerName tapstar.com.au
-        ServerAlias www.tapstar.com.au
+        ServerName domain.com.au
+        ServerAlias www.domain.com.au
         DocumentRoot /var/www/frontend/build
 
         <Directory /var/www/frontend/build/>
@@ -126,8 +126,8 @@ I run the npm run build command in my local machine and I upload the build folde
 
 
 Include /etc/letsencrypt/options-ssl-apache.conf
-SSLCertificateFile /etc/letsencrypt/live/tapstar.com.au-0001/fullchain.pem
-SSLCertificateKeyFile /etc/letsencrypt/live/tapstar.com.au-0001/privkey.pem
+SSLCertificateFile /etc/letsencrypt/live/domain.com.au-0001/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/domain.com.au-0001/privkey.pem
 </VirtualHost>
 </IfModule>
 ```
