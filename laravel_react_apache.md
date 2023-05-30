@@ -60,7 +60,7 @@ The app is installed under /var/www/api
 ```
 ...
 APP_URL=https://api.domain.com
-SANCTUM_STATEFUL_DOMAINS=domain.com.au
+SANCTUM_STATEFUL_DOMAINS=domain.com.au:443,api.domain.com.au:443
 SESSION_DOMAIN=.domain.com.au
 ...
 ```
