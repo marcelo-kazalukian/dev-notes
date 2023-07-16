@@ -27,10 +27,30 @@ class Role extends Model
  
     protected $fillable = ['name'];
 }
+```
 
 Adding Role ID Migration:
 ```php
 Schema::table('users', function (Blueprint $table) {
     $table->foreignId('role_id')->constrained();
 });
+```
+app/Models/User.php:
+```php
+class User extends Authenticatable
+{
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'role_id' 
+    ];
+ 
+    // ...
+ 
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+}
 ```
