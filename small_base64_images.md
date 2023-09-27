@@ -1,4 +1,4 @@
-## Here are the 10px squares:
+## 10px square images
 
 Red
 ```
