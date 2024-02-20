@@ -1,0 +1,1 @@
+One of the most common ways to write tests is to divide any function into three fazes, and they all start with an "A" letter. It's a "AAA". You can call it a framework: Arrange, Act, Assert. In most cases, you should stick to this plan for every function in your test.
