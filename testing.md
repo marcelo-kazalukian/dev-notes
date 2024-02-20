@@ -1,7 +1,7 @@
 ## Unit Tests vs Feature Tests
 Feature tests: are for most of the tests of the site/app, it is page content, notifications, and anything that has visible/viewable content.
 
-Unit tests: are for inside mechanisms: actions, helpers, services, etc, that are not reachable by any route, but play their role inside - like currency converters, pdf generators, webhook parsers, routers, etc?
+Unit tests: are for inside mechanisms: actions, helpers, services, etc, that are not reachable by any route, but play their role inside - like currency converters, pdf generators, webhook parsers, routers, etc.
 
 ## AAA "Mantra": Arrange, Act, Assert
 One of the most common ways to write tests is to divide any function into three fazes, and they all start with an "A" letter. It's a "AAA". You can call it a framework: Arrange, Act, Assert. In most cases, you should stick to this plan for every function in your test.
