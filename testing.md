@@ -7,11 +7,13 @@ Add any data you need, any configuration. Build the scenario.
 ```php
 public function test_homepage_contains_non_empty_table(): void
 {
+    /** Arrange **/
     Product::create([ 
         'name'  => 'Product 1',
         'price' => 123,
     ]); 
- 
+    /*************/
+
     $response = $this->get('/products');
  
     $response->assertStatus(200);
