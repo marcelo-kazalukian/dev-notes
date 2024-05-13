@@ -2,5 +2,6 @@
 
 [Download Nginx from here ](http://nginx.org/en/download.html)
 
-Choose a location for the extracted files (e.g., C:\nginx)
+Choose a location to extract the files (e.g., C:\nginx)
 
+Click on the Start button, Type cmd, right-click on the Command Prompt result and select Run as administrator.
