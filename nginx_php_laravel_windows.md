@@ -78,6 +78,27 @@ location ~ \.php$ {
 
 Be sure the port value in: fastcgi_pass 127.0.0.1:9000; is the same that you used in the start-php-fcgi-nginx.bat
 
+Double-click on the start-php-fcgi-nginx.bat and check the localhost in your browser. You have to see the "Welcome to Nginx" page.
+
+### Stop and restart PHP and Nginx
+
+To stop everything create the stop-php-fcgi-nginx.bat file with this
+```
+@ECHO OFF
+taskkill /f /IM nginx.exe
+taskkill /f /IM php-cgi.exe
+EXIT /b
+```
+
+To restart everything create the restart-php-fcgi-nginx.bat file with this
+
+```
+@ECHO OFF
+call stop-php-fcgi-nginx.bat
+call start-php-fcgi-nginx.bat
+EXIT /b
+```
+
 
 
 
