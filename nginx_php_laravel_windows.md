@@ -24,6 +24,7 @@ To stop Nginx, use the command `nginx -s stop`.
 To quit Nginx gracefully, use `nginx -s quit`.
 To reload the Nginx configuration file, use `nginx -s reload`.
 To reopen the Nginx log files, use `nginx -s reopen`.
+To check status tasklist /fi "imagename eq nginx.exe" (One of the processes is the master process and another is the worker process)
 ```
 Remember to run these commands from the directory where Nginx is installed.
 
