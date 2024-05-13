@@ -99,6 +99,11 @@ call start-php-fcgi-nginx.bat
 EXIT /b
 ```
 
+## Setup Nginx conf file
+
+Everything should be working fine at this point. Then you have to modify the nginx conf file according to your needs.
+
+
 
 
 
