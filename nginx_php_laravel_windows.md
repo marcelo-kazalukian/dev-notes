@@ -103,28 +103,28 @@ EXIT /b
 
 Everything should be working fine at this point. Then you have to modify the c:\nginx\conf\nginx file according to your needs.
 
-This is my setup for Laravel
+This is my setup for Laravel based on the [documentation] (https://laravel.com/docs/11.x/deployment#nginx)
 
 ```
 server {
         listen       80;
-		listen [::]:80;
+	listen [::]:80;
         server_name  localhost;
-		root c:\www\myapp;
+	root c:\www\myapp;
 
         add_header X-Frame-Options "SAMEORIGIN";
-		add_header X-Content-Type-Options "nosniff";
+	add_header X-Content-Type-Options "nosniff";
 				
-		index index.php;
+	index index.php;
 		
-		charset utf-8;
+	charset utf-8;
 
         location / {            		
             try_files $uri $uri/ /index.php?$query_string;
         }
 
         location = /favicon.ico { access_log off; log_not_found off; }
-		location = /robots.txt  { access_log off; log_not_found off; }
+	location = /robots.txt  { access_log off; log_not_found off; }
 		
         error_page 404 /index.php;
        
