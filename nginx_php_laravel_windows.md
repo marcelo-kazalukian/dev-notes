@@ -99,6 +99,29 @@ call start-php-fcgi-nginx.bat
 EXIT /b
 ```
 
+## Keep Nginx and PHP running after restart windows
+In the Windows search bar type: Task scheduler
+
+Click on: Create Basic Task
+
+Put a name like: Start Nginx and PHP, a description if you want to and click next.
+
+Select: When the comupter starts and click next.
+
+Select: Start a program and click next.
+
+Click on browser and select the start-php-fcgi-nginx.bat file created before and click next.
+
+Select: Open the properties dialog for this task when I click Finish and click next.
+
+Select: Run whether user is logged on or not
+
+Select: Run with highest privileges
+
+Select: configure for and select the correct OS and click Ok.
+
+Restart your server and check if the server is running.
+
 ## Setup Nginx conf file
 
 Everything should be working fine at this point. Then you have to modify the c:\nginx\conf\nginx file according to your needs.
