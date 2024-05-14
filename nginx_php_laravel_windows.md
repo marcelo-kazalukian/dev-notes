@@ -36,31 +36,6 @@ Choose a location to extract the files (e.g., C:\php)
 
 Check the php.ini and modify it according to your needs.
 
-## Connect and start PHP-FastCGI and Nginx
-
-### Create a .bat to start PHP FastCGI and nginx together
-
-NGINX can interface with PHP on Windows via a FastCGI daemon, which ships with PHP: php-cgi.exe. You need to run php-cgi.exe -b 127.0.0.1:<port> and use fastcgi_pass 127.0.0.1:<port> in the NGINX configuration file. After being launched, php-cgi.exe will keep listening for connections in a command prompt window. To hide that window, use the tiny utility RunHiddenConsole
-
-Download the RunHiddenConsole utility from [here](https://redmine.lighttpd.net/attachments/660/RunHiddenConsole.zip)
-
-Create somewhere (e.g. in c:\nginx\) a batch file start-php-fcgi-nginx.bat similar to this one:
-
-```
-@ECHO OFF
-ECHO Starting PHP FastCGI...
-set PATH=C:\PHP;%PATH%
-c:\bin\RunHiddenConsole.exe C:\PHP\php-cgi.exe -b 127.0.0.1:9000
-
-ECHO Starting NGINX
-start nginx.exe
-
-popd
-EXIT /b
-```
-
-The line: set PATH=C:\PHP;%PATH% could be removed if you set c:\php in the PATH windows environment variable (which is highly recommended).
-
 ### Update the nginx conf file
 
 Create a backup of c:\nginx\conf\nginx file
@@ -125,6 +100,10 @@ Startup directory = C:\php
 Arguments = -b 127.0.0.1:9000
 
 Install the service
+
+## Restart the server
+
+Open the Windows task manager, click on the services tabs, find nginx, right-click and select restart.
 
 ## Setup Nginx conf file
 
