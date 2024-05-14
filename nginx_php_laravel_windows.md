@@ -99,28 +99,51 @@ call start-php-fcgi-nginx.bat
 EXIT /b
 ```
 
-## Keep Nginx and PHP running after restart windows
-In the Windows search bar type: Task scheduler
+## Keep Nginx after restart windows
 
-Click on: Create Basic Task
+We need to use nssm to install nginx and php as a service in Windows
 
-Put a name like: Start Nginx and PHP, a description if you want to and click next.
+Download NSSM from: https://nssm.cc/download Copy the nssm.exe from the win32 or win64 folder depending on your system in c:\nssm and add this folder to the PATH windows variable
 
-Select: When the comupter starts and click next.
+Open cmd as admin, navigate to C:\nssm
 
-Select: Start a program and click next.
+Type in this command without the quotes “nssm install nginx”
 
-Click on browser and select the start-php-fcgi-nginx.bat file created before and click next.
+Path = C:\nginx\nginx.exe
 
-Select: Open the properties dialog for this task when I click Finish and click next.
+Startup directory = C:\nginx
 
-Select: Run whether user is logged on or not
+Install the service
 
-Select: Run with highest privileges
+To Make sure you run the service as the admin account: 
 
-Select: configure for and select the correct OS and click Ok.
+Open run and type in services.msc
 
-Restart your server and check if the server is running.
+Search for the nginx service we just installed
+
+Double-click and go to the Log On tab
+
+Select ‘This account:’ and fill in your account details and then press ok.
+
+Right-click on the nginx service and restart
+
+## Keep PHP running after restart Windows
+
+We need to use nssm to install nginx and php as a service in Windows
+
+Download NSSM from: https://nssm.cc/download Copy the nssm.exe from the win32 or win64 folder depending on your system in c:\nssm and add this folder to the PATH windows variable
+
+Open cmd as admin, navigate to C:\nssm
+
+Type in this command without the quotes “nssm install php”
+
+Path = C:\php\php-cgi.exe
+
+Startup directory = C:\php
+
+Arguments = -b 127.0.0.1:9000
+
+Install the service
 
 ## Setup Nginx conf file
 
