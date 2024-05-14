@@ -167,8 +167,11 @@ server {
 ## References
 
 https://www.nginx.com/resources/wiki/start/topics/examples/phpfastcgionwindows/
+
 https://nginx.org/en/docs/windows.html
+
 https://laravel.com/docs/11.x/deployment
+
 https://dev.to/ilhamsabir/windows-10-nginx-php-2oef
 
 
