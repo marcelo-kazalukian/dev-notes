@@ -164,6 +164,11 @@ server {
     }
 ```
 
+## References
+
+(https://dev.to/ilhamsabir/windows-10-nginx-php-2oef)
+
+
 
 
 
