@@ -101,7 +101,9 @@ EXIT /b
 
 ## Setup Nginx conf file
 
-Everything should be working fine at this point. Then you have to modify the nginx conf file according to your needs.
+Everything should be working fine at this point. Then you have to modify the c:\nginx\conf\nginx file according to your needs.
+
+
 
 
 
