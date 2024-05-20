@@ -55,7 +55,7 @@ Be sure the port value in: fastcgi_pass 127.0.0.1:9000; is the same that you use
 
 Double-click on the start-php-fcgi-nginx.bat and check the localhost in your browser. You have to see the "Welcome to Nginx" page.
 
-## Keep Nginx after restart windows
+## Keep Nginx running after restart windows
 
 We need to use nssm to install nginx and php as a service in Windows
 
@@ -146,6 +146,69 @@ server {
         }
     }
 ```
+
+## Install a SSL certificate
+
+Download the digicert utility for windows [here] (https://www.digicert.com/support/tools/certificate-utility-for-windows)
+
+Create a Csr file 
+
+Order the certificate to Digicert using the crt file created
+
+Once the certificate is loaded in the digicert utility for windows, click on the certificate
+
+Click on "export certificate"
+
+Select: yes, export the private key AND the "key file" option
+
+Copy the .crt and the .key files in the c:/nginx/conf 
+
+Update the c:/nginx/conf/nginx.conf file
+
+```
+server {
+        listen   443 ssl;
+		server_name  *.mydomain.com;
+		
+		ssl_certificate    wildcard_mydomain_com.crt;
+		ssl_certificate_key    wildcard_mydomain_com.key;
+		
+        
+		#server_tokens off;
+		root c:\www\myapp\public;
+
+        	add_header X-Frame-Options "SAMEORIGIN";
+		add_header X-Content-Type-Options "nosniff";
+				
+		index index.php;
+		
+		charset utf-8;
+
+        location / {            					
+            try_files $uri $uri/ /index.php?$query_string;
+        }
+
+        location = /favicon.ico { access_log off; log_not_found off; }
+	location = /robots.txt  { access_log off; log_not_found off; }
+		
+	#access_log off;
+	#error_log c:\nginx\logs\myapp-error.log error;
+		
+        error_page 404 /index.php;
+       
+        location ~ \.php$ {
+			fastcgi_pass   127.0.0.1:9000;			
+			fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+			include        fastcgi_params;
+			fastcgi_hide_header X-Powered-By;
+		}
+        
+        location ~ /\.(?!well-known).* {
+            deny  all;
+        }
+    }
+```
+
 
 ## References
 
