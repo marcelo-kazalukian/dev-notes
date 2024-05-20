@@ -8,6 +8,8 @@ Click on the + symbol and select custom
 
 Complete with
 
+```
+
 Name: Pint
 
 File type: PHP
@@ -27,6 +29,8 @@ Expand the "advanced options"
 Uncheck: Auto-save edited files to trigger the watcher
 
 Check: Trigger the watcher on external changes.
+
+```
 
 Click on Save.
 
