@@ -1,6 +1,6 @@
 ## How to setup Pint
 
-Control + alt + O to open the "search actions" feature
+Control + alt + A to open the "search actions" feature
 
 Type "file watcher"
 
