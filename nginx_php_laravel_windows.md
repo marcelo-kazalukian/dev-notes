@@ -222,6 +222,9 @@ https://laravel.com/docs/11.x/deployment
 
 https://dev.to/ilhamsabir/windows-10-nginx-php-2oef
 
+https://www.thesslstore.com/knowledgebase/ssl-generate/csr-generation-guide-for-nginx-openssl/
+
+https://www.thesslstore.com/knowledgebase/ssl-install/nginx-ssl-installation/
 
 
 
