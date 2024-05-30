@@ -1,4 +1,4 @@
-``` blade
+```
 @props(['active'])
 
 @php
