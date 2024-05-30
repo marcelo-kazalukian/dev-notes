@@ -9,3 +9,7 @@ $classes = ($active ?? false)
 <a {{ $attributes->merge(['class' => $classes . ' block']) }}>
     {{ $slot }}
 </a>
+
+usage
+
+<x-nav-link :active="request()->routeIs('applications.*')" href="{{route('applications.index')}}">Applications</x-nav-link>
