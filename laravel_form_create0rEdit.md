@@ -1,6 +1,6 @@
 # Using same blade form for create and edit
 
-view/entries/createOrEdit.blade.php
+view/events/createOrEdit.blade.php
 ```blade
 @extends('layouts.app')
 
