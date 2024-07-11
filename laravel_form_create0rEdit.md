@@ -6,33 +6,36 @@ view/entries/createOrEdit.blade.php
 
 @section('content')
     <div>
-        @if (isset($entry))
-            <h1>Edit entry</h1>
-            <form method="POST" action="{{ route('entries.update', $entry->id) }}">
+        @if (isset($event))
+            <h1>Edit event</h1>
+            <form method="POST" action="{{ route('events.update', $event->id) }}">
                 @method('PUT')
         @else
-            <h1>Create a new entry</h1>
-            <form method="POST" action="{{ route('entries.store') }}">
+            <h1>Create a new event</h1>
+            <form method="POST" action="{{ route('events.store') }}">
         @endif
-                @csrf
-                <div>                
-                    <textarea required name="content" rows="10">{{old('content', $entry->content ?? '')}}</textarea>
-                </div>
+                @csrf                
+                <textarea required name="description" rows="10">{{old('content', $event->description ?? '')}}</textarea>
+                <select>
+                    @foreach ($venues as $venue)
+                        <option @selected(isset($event) && $event->venue_id == $venue->id) value="{{$venue->id}}">{{$venue->name}}</option>
+                    @endforeach
+                </select>
                 <button type="submit">Submit</button>
             </form>
     </div>
 @endsection
 ```
 
-EntryController.php
+EventController.php
 ```php
 public function create()
 {
-    return view('entries.createOrEdit');
+    return view('events.createOrEdit');
 }
 
-public function edit(Entry $entry)
+public function edit(Event $event)
 {
-    return view('entries.createOrEdit', compact('entry'));
+    return view('events.createOrEdit', compact('event'));
 }
 ```
