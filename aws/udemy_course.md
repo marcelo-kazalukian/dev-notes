@@ -20,25 +20,41 @@ Ec2 instances have a "Delete on temination" attribute. By default the root volum
   - Force full initialization of snapshot to have no latency on the first use (cost a lot of money)
 
 ### AMI: Amazon Machine Image
+
 AMI are a customization of an EC2 instance:
 - You add your own software, configuration, operating system, monitoring ...
 - Faster boot/configuration time because all your software is pre-package
 - Are built for a specific region but the can be copied across region
 - You can launch EC2 instances from public AWS, your own AMI, or AWS marketplace.
 
+### EC2 Instance Store
 
-  
-- come in 6 Types:
+ABS volumes are network drives, EC2 instace stores are hard drive attached to the physical server.
+- Better I/O performance
+- If the EC2 instance lose their storage if they're stopped
+- Good for buffer / cache / scratch data / temporary content
+
+### EBS Volume types
+
+There are 6 Types:
 - gp2/gp3 (SSD): General purpose SSD volume that balances price and performance for a wide variaty of workloads
   - Only gp2/gp3 and io1/io2 Block Express can be sed as boot volumes. In Gp3 you can set IOPS and throughput (amount of data transferred) independently, in gp2 they are linked.
 - io1/io2 Block Express (SSD): Highest-performance SSD volume for mission-critical low-latency or high-throughput workloads
   - Provisioned IOPS. For applications that need more than 16.000 IOPS. Great for databases workloads.
-  - Supports EBS Multi-attach: attch the same EBS volume to multiple AC2 instances in the same AZ. Up to 16 EC2 Instances at a time. Must use a file system thats's cluster-aware.
+  - Supports EBS Multi-attach
 - st1 (HDD): low cost HDD volume designed for frequently accessed, throughput-intensive workloads
 - sc1 (HDD): lowest cost HDD volume designed for less frequently accessed workloads.
 
 EBS volumes are created for a specific AZ. It's possible migrate them between different AZ's using EBS snapshots.
 
+### EBS Muti-Attach io1/io2 family
 
+Attach the same EBS volume to multiple EC2 instances in the same AZ
 
-Amazon Machine Images (AMIs) are specific to each AWS Region. You would need to first copy the AMI to the target region and then use it to launch your instance there.
+- Each instance has full read & write permissions.
+- Up to 16 EC2 Instances at a time.
+- Must use a file system thats's cluster-aware.
+- Use case:
+  - Higher application availability in clustered Linux Applications (Teradata)
+  - Application must manage concurrent write operations
+  
