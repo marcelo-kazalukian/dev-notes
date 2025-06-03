@@ -1,6 +1,6 @@
 ## Section 6: EC2 Instance Storage
 
-- An Elastic Block Store (EBS) Volumne is a network drive you can attach to your instances while they run.
+An Elastic Block Store (EBS) Volumne is a network drive you can attach to your instances while they run.
 - It allows persist data even after their termination
 - Bound to a specific available zone (moveable using snapshots)
 
