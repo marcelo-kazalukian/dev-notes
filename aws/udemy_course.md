@@ -87,3 +87,5 @@ Storage Classes
   - Standard: multi-az, great for prod
   - One AZ: great for dev, backup enabled by default, compatible with IA
 
+### EBS vs EFS 
+
