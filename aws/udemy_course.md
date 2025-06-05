@@ -69,21 +69,21 @@ It a NFS (network file system) that can be mounted on many ec2.
 
 Performance
 - Performance Mode
- - General purpose (default): latency-sensitive uses cases
- - Max I/O: higher latency, throughput, highly parallel
+  - General purpose (default): latency-sensitive uses cases
+  - Max I/O: higher latency, throughput, highly parallel
 
 - Troughput mode
- - Bursting
- - Provisioned
- - Elastic (depends on the workload)
+  - Bursting
+  - Provisioned
+  - Elastic (depends on the workload)
 
 Storage Classes
 - Storage Tiers: implement lifecicly policies to move files between storage tiers
- - Standard: for frequently accessed files
- - infrequent access (EFS-IA): cheaper to retrieve files
- - Archive: rarely accessed data, few times each year, 50% cheaper
+  - Standard: for frequently accessed files
+  - infrequent access (EFS-IA): cheaper to retrieve files
+  - Archive: rarely accessed data, few times each year, 50% cheaper
 
 - Availability and durability
- - Standard: multi-az, great for prod
- - One AZ: great for dev, backup enabled by default, compatible with IA
+  - Standard: multi-az, great for prod
+  - One AZ: great for dev, backup enabled by default, compatible with IA
 
