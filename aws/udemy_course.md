@@ -87,5 +87,27 @@ Storage Classes
   - Standard: multi-az, great for prod
   - One AZ: great for dev, backup enabled by default, compatible with IA
 
-### EBS vs EFS 
+## Section 7 Fundamentals: ELB + ASG
+
+Vertical Scabality
+- Means incresing the size of the instance
+- Common for non distributed systems, sush as databases
+- RDS, ElastiCahe are services that can scale vertically
+- Hardware limit
+
+Horizontal Scalability
+- Means increasing the number of instances/system for your application
+- Horizontal scaling implies distributed systems.
+- Common for web applications / modern applicactions
+- Using: Auto Scaling Group or Load Balancer
+
+High availability
+- HA Usually goes hand in hand with horizontal scaling
+- HA means running your application/system in at least 2 data centers (or Availability zones)
+- The goal of HA is to survive a data center loss
+- The HA can be passive (for RDS Muti AZ for example)
+- THE HA can be active (for horizontal scaling)
+- Using: Auto scaling group multi az or Load Balancer Multi AZ
+  
+
 
