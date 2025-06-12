@@ -108,6 +108,37 @@ High availability
 - The HA can be passive (for RDS Muti AZ for example)
 - THE HA can be active (for horizontal scaling)
 - Using: Auto scaling group multi az or Load Balancer Multi AZ
+
+### What is a load balacing
+
+Load balancers are servers that forward traffic to multiple servers downstream
+
+- Expose a single point of access (DNS) to your application
+- Seamlessly handle failures of downstream instances
+- Do regular health checks to your instances
+- Provide SSl termination (HTTPS) for your websites
+- Enforce stickness with cookies
+- High availability accross zones
+- Separate public traffic from private traffic
+
+### An Elastic Load Balancer is a managed load balancer:
+- AWS guarantees that it will be working.
+- AWS takes care of upgrades, maintenance, high availability
+- AWS provides only a few configuration knobs
+
+### Type of Load Balancer (LB) on AWS
+- Classic LB (OLD): HTTP/S, TCP, SSL (NO included in the exam)
+- Aplication LB (New generation): HTTP/S, Websocket
+- Network LB (new generation): TCP, TLS, UDP
+- Gateway LB (network Layer): Operates at layer 3 (Network layer), IP Protocol
+
+Some LB can be setup as internal (private) or external (public) ELBs.
+
+### Load Balancers Security Groups
+
+Users can access to the LB using HTTP/S from anywhere. Then the EC2 should only allow traffic coming directly from the LB, so the source in the EC2 security group will be a LB security group.
+
+
   
 
 
