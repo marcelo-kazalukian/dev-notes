@@ -4,6 +4,7 @@
 <?php
 
 namespace App\Actions;
+use Illuminate\Support\Facades\DB;
 
 class CreateTodo
 {    
